@@ -1,0 +1,35 @@
+@bar-size: 10px;
+@thumb-size: 4px;
+@thumb-color: #E0E0E0;
+@thumb-color-active: #777777;
+/* overwrite prefect-scrollbar styles */
+
+.ps {
+    .ps__rail-x {
+        height: @bar-size !important;
+    }
+    .ps__rail-y {
+        width: @bar-size !important;
+    }
+    .ps__rail-x,
+    .ps__rail-y {
+        &:hover,
+        &:focus,
+        &.ps--clicking {
+            background-color: transparent !important;
+            opacity: 1 !important;
+            height: @bar-size !important;
+        }
+        .ps__thumb-x {
+            background-color: @thumb-color !important;
+            border-radius: @thumb-size !important;
+            height: @thumb-size !important;
+        }
+        &:hover>.ps__thumb-x,
+        &:focus>.ps__thumb-x,
+        &.ps--clicking .ps__thumb-x {
+            background-color: @thumb-color-active !important;
+            height: @thumb-size !important;
+        }
+    }
+}
