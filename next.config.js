@@ -3,6 +3,11 @@ const path = require('path');
 const withLess = require('next-with-less');
 const lessToJS = require('less-vars-to-js');
 
+const apiHostMapping = {
+  'next-prd': '101.133.238.49',
+  'next': 'localhost'
+};
+
 const nextConfig = {
   reactStrictMode: true,
   lessLoaderOptions: {
@@ -15,12 +20,9 @@ const nextConfig = {
     config.resolve.alias['@root'] = path.join(__dirname, '/');
     return config;
   },
+
   env: {
-    ENVHOST: process.env.ENV ? envHostMapping[process.env.ENV] : 'dev-',
-    CLIENT_ID: process.env.ENV ? tokenClientIdMapping[process.env.ENV] : 'MPS.Portal.Debug',
-    CLIENT_SECRET: process.env.ENV ? tokenClientSecretMapping[process.env.ENV] : 'IEYVtrSGekyI',
-    CONFIGURATION_API_URL: process.env.ENV ? configurationApiUrlMapping[process.env.ENV] : 'https://dev-mps-configuration-api.ysd.com/api/v1',
-    TOKEN_API_URL: process.env.ENV ? tokenApiUrlMapping[process.env.ENV] : 'https://stg-auth.ysd.com:44300/connect/token'
+    APIHOST: process.env.ENV ? apiHostMapping[process.env.ENV] : 'localhost',
 
   },
   distDir: 'build',

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-next-prd": "cross-env ENV=next-prd next build"
   },
   "dependencies": {
     "@ant-design/charts": "^1.4.1",
@@ -30,7 +31,8 @@
     "react-draggable": "^4.4.5",
     "react-perfect-scrollbar": "^1.5.8",
     "react-toastify": "^9.0.1",
-    "webpack": "^5.72.0"
+    "webpack": "^5.72.0",
+    "cross-env": "^7.0.3"
   },
   "devDependencies": {
     "eslint": "^8.14.0",
