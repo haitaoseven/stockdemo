@@ -1,7 +1,7 @@
 const ENVHOST = process.env.ENVHOST;
 
 function getBaseUrl() {
-    return 'http://localhost:9001/api/v1/';
+    return 'http://localhost:9010/api/v1/';
 }
 
 export default {
